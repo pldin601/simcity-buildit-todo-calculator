@@ -6,7 +6,15 @@ import "./styles.css";
 import Quest from "./components/quest/Quest";
 
 function App() {
-  return <Quest log={calculate({ chemicals: 2, wood: 1, textiles: 1, flourBag: 2, treeSaplings: 1 })} />;
+  return (
+    <Quest
+      log={calculate(
+        { chemicals: 2, wood: 1, textiles: 1, flourBag: 2, treeSaplings: 1 },
+        { hammer: 1, chairs: 1 },
+        { chairs: 2, gardenFurniture: 2, tables: 1 }
+      )}
+    />
+  );
 }
 
 const rootElement = document.getElementById("root");
