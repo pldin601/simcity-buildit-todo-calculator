@@ -3,9 +3,10 @@ import { render } from "react-dom";
 import calculate from "./domain/calculate";
 
 import "./styles.css";
+import Quest from "./components/quest/Quest";
 
 function App() {
-  return <pre>{JSON.stringify(calculate(), null, 2)}</pre>;
+  return <Quest log={calculate({ wood: 1 })} />;
 }
 
 const rootElement = document.getElementById("root");
