@@ -18,32 +18,34 @@ export default function Quest({ log }) {
             <th>Task</th>
           </tr>
         </thead>
-        {React.Children.toArray(
-          log.map(({ product, quantity, message, time }) => {
-            const delta = time - prevTime;
-            prevTime = time;
-            return (
-              <>
-                {delta > 0 && (
+        <tbody>
+          {React.Children.toArray(
+            log.map(({ product, quantity, message, time }) => {
+              const delta = time - prevTime;
+              prevTime = time;
+              return (
+                <>
+                  {delta > 0 && (
+                    <tr>
+                      <td>
+                        <WaitTime time={delta} />
+                      </td>
+                    </tr>
+                  )}
                   <tr>
                     <td>
-                      <WaitTime time={delta} />
+                      {message === "START" ? (
+                        <ProduceProduct product={product} quantity={quantity} />
+                      ) : (
+                        <CollectProduct product={product} quantity={quantity} />
+                      )}
                     </td>
                   </tr>
-                )}
-                <tr>
-                  <td>
-                    {message === "START" ? (
-                      <ProduceProduct product={product} quantity={quantity} />
-                    ) : (
-                      <CollectProduct product={product} quantity={quantity} />
-                    )}
-                  </td>
-                </tr>
-              </>
-            );
-          })
-        )}
+                </>
+              );
+            })
+          )}
+        </tbody>
       </Table>
       <Row>
         <Col>
