@@ -12,6 +12,11 @@ export interface CalculatedStep {
   currentPosition: number;
 }
 
+export const initialState: ApplicationSteps = {
+  type: "initial",
+  orders: []
+};
+
 export type ApplicationSteps = InitialStep | CalculatedStep;
 
 export const createCalculateAction = (orders: Order[]) => ({
@@ -22,7 +27,7 @@ export const createGoBackAction = () => ({ type: "GO_BACK" as "GO_BACK" });
 
 export function createApplicationReducer() {
   return (
-    state: ApplicationSteps,
+    state: ApplicationSteps = initialState,
     action:
       | ReturnType<typeof createCalculateAction>
       | ReturnType<typeof createGoBackAction>
