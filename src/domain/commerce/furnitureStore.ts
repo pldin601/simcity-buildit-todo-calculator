@@ -1,15 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type FurnitureStoreItemNames =
-  | "chairs"
-  | "tables"
-  | "homeTextiles"
-  | "cupBoard"
-  | "couch";
-
-export type FurnitureStore = Commerce<FurnitureStoreItemNames>;
-
-export const furnitureStoreItems: FurnitureStore = {
+export const furnitureStoreItems = {
   chairs: {
     time: "17m",
     requires: {

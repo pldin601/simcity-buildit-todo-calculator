@@ -1,16 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type HardwareStoreItemNames =
-  | "hammer"
-  | "cookingUtensils"
-  | "measuringTape"
-  | "ladder"
-  | "shovel"
-  | "drill";
-
-export type HardwareStore = Commerce<HardwareStoreItemNames>;
-
-export const hardwareStoreItems: HardwareStore = {
+export const hardwareStoreItems = {
   hammer: {
     time: "11m12s",
     requires: {

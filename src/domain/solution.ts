@@ -1,14 +1,4 @@
-import { FactoryNames } from "./factories";
-import { CommerceNames } from "./commerce";
-import { Product } from "./product";
-
-export interface SolutionState {
-  log: Array<{ time: number; message: string; product: Product }>;
-  factories: { [K in FactoryNames]: { timeQueues: number[] } };
-  commerce: { [K in CommerceNames]: { timeQueue: number } };
-}
-
-export function createEmptySolution(): SolutionState {
+export function createEmptySolution() {
   return {
     log: [],
     factories: {

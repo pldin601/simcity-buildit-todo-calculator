@@ -1,16 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type DonutShopItemNames =
-  | "donuts"
-  | "greenSmoothie"
-  | "breadRoll"
-  | "cherryCheeseCake"
-  | "frozenYogurt"
-  | "coffee";
-
-export type DonutShop = Commerce<DonutShopItemNames>;
-
-export const donutShopItems: DonutShop = {
+export const donutShopItems = {
   donuts: {
     time: "40m30s",
     requires: {

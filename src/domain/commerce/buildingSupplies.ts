@@ -1,16 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type BuildingSuppliesItemNames =
-  | "nails"
-  | "cement"
-  | "planks"
-  | "glue"
-  | "bricks"
-  | "paint";
-
-export type BuildingSupplies = Commerce<BuildingSuppliesItemNames>;
-
-export const buildingSuppliesItems: BuildingSupplies = {
+export const buildingSuppliesItems = {
   nails: {
     time: "4m",
     requires: {

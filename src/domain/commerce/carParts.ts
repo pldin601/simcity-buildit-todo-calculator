@@ -1,10 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type CarPartsItemNames = "motorOil" | "carTire" | "engine";
-
-export type CarParts = Commerce<CarPartsItemNames>;
-
-export const carPartsItems: CarParts = {
+export const carPartsItems = {
   motorOil: {
     time: "16m",
     requires: {

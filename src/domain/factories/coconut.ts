@@ -1,7 +1,3 @@
-import { Factory } from "../factories";
-
-export type CoconutFactoryProductName = "coconut";
-
-export const coconutFactory: Factory<CoconutFactoryProductName> = {
+export const coconutFactory = {
   coconut: { time: "6m" }
 };

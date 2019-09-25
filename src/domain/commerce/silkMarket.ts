@@ -1,10 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type SilkMarketItemNames = "thread" | "fan" | "bathrobe";
-
-export type SilkMarket = Commerce<SilkMarketItemNames>;
-
-export const silkMarketItems: SilkMarket = {
+export const silkMarketItems = {
   thread: {
     time: "16m",
     requires: {

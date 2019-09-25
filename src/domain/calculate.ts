@@ -1,12 +1,10 @@
 import { findKey, range, min, isEqual, indexOf, orderBy } from "lodash";
 import convertTime from "./convertTime";
-import { SolutionState, createEmptySolution } from "./solution";
-import { Order } from "./order";
-import { Product } from "./product";
+import { createEmptySolution } from "./solution";
 import { factories } from "./factories";
 import { commerces } from "./commerce";
 
-function calculateProduct(product: Product, solutionState: SolutionState) {
+function calculateProduct(product, solutionState) {
   const factoryKey = findKey(factories, it => product in it);
   const commerceKey = findKey(commerces, it => product in it);
 
@@ -36,7 +34,7 @@ function calculateProduct(product: Product, solutionState: SolutionState) {
     const commerceState = solutionState.commerce[commerceKey];
     const timeToProduce = convertTime(commerceProduct.time);
     let startAt = commerceState.timeQueue;
-    Object.keys(commerceProduct.requires).forEach((key: Product) => {
+    Object.keys(commerceProduct.requires).forEach((key) => {
       const quantity = commerceProduct.requires[key];
       range(0, quantity).forEach(() => {
         startAt = Math.max(startAt, calculateProduct(key, solutionState));
@@ -59,10 +57,10 @@ function calculateProduct(product: Product, solutionState: SolutionState) {
   throw new TypeError(`Unknown product - ${product}`);
 }
 
-function groupLog(log: SolutionState["log"]) {
+function groupLog(log) {
   let groupedLog: any[] = [];
-  let previousLog = null;
-  let quantity = 0;
+  let previousLog: any = null;
+  let quantity: number = 0;
   log.forEach(it => {
     if (previousLog === null) {
       previousLog = it;
@@ -81,7 +79,7 @@ function groupLog(log: SolutionState["log"]) {
   return groupedLog;
 }
 
-export default function calculate(...orders: Order[]): any {
+export default function calculate(...orders) {
   const solutionState = createEmptySolution();
   let completeAt = 0;
   orders.forEach(order => {

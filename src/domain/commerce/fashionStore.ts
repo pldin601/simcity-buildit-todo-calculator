@@ -1,15 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type FashionStoreItemNames =
-  | "cap"
-  | "shoes"
-  | "watch"
-  | "businessSuits"
-  | "backPack";
-
-export type FashionStore = Commerce<FashionStoreItemNames>;
-
-export const fashionStoreItems: FashionStore = {
+export const fashionStoreItems = {
   cap: {
     time: "54m",
     requires: {

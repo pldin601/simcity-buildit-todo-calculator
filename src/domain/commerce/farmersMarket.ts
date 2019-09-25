@@ -1,17 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type FarmersMarketItemNames =
-  | "beef"
-  | "vegetables"
-  | "cream"
-  | "flourBag"
-  | "corn"
-  | "fruitAndBerries"
-  | "cheese";
-
-export type FarmersMarket = Commerce<FarmersMarketItemNames>;
-
-export const farmersMarketItems: FarmersMarket = {
+export const farmersMarketItems = {
   beef: {
     time: "2h7m",
     requires: {

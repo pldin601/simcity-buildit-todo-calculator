@@ -1,7 +1,3 @@
-import { Factory } from "../factories";
-
-export type ColdFiordProductNames = "fish";
-
-export const coldFiordFactory: Factory<ColdFiordProductNames> = {
+export const coldFiordFactory = {
   fish: { time: "6m" }
 };

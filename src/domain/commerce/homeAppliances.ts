@@ -1,14 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type HomeAppliancesItemNames =
-  | "bbqGrill"
-  | "refrigerator"
-  | "lightingSystem"
-  | "tv";
-
-export type HomeAppliances = Commerce<HomeAppliancesItemNames>;
-
-export const homeAppliancesItems: HomeAppliances = {
+export const homeAppliancesItems = {
   bbqGrill: {
     time: "2h45m",
     requires: {

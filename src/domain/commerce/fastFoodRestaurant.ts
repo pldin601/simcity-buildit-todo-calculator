@@ -1,15 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type FastFoodRestaurantItemNames =
-  | "icecreamSandwich"
-  | "pizza"
-  | "burgers"
-  | "cheeseFries"
-  | "lemonadeBottle";
-
-export type FastFoodRestaurant = Commerce<FastFoodRestaurantItemNames>;
-
-export const fastFoodRestaurantItems: FastFoodRestaurant = {
+export const fastFoodRestaurantItems = {
   icecreamSandwich: {
     time: "12m36s",
     requires: {

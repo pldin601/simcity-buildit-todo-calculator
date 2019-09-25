@@ -1,13 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type FishMarketItemNames =
-  | "fishConserves"
-  | "fishSoup"
-  | "sandwichWithLosos";
-
-export type FishMarket = Commerce<FishMarketItemNames>;
-
-export const fishMarketItems: FishMarket = {
+export const fishMarketItems = {
   fishConserves: {
     time: "16m",
     requires: {

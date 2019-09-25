@@ -1,7 +1,4 @@
-import { Factory } from "../factories";
 
-export type OilPlantFactoryProductName = "crudeOil";
-
-export const oilPlantFactory: Factory<OilPlantFactoryProductName> = {
+export const oilPlantFactory = {
   crudeOil: { time: "6m" }
 };

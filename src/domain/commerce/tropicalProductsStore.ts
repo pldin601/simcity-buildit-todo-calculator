@@ -1,13 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type TropicalProductsStoreItemNames =
-  | "coconulOil"
-  | "faceCream"
-  | "tropicalDrink";
-
-export type TropicalProducts = Commerce<TropicalProductsStoreItemNames>;
-
-export const tropicalProductsStoreItems: TropicalProducts = {
+export const tropicalProductsStoreItems = {
   coconulOil: {
     time: "16m",
     requires: {

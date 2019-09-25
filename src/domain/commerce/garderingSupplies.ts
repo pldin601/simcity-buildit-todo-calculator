@@ -1,16 +1,4 @@
-import { Commerce } from "../commerce";
-
-export type GarderingSuppliesItemNames =
-  | "grass"
-  | "firePit"
-  | "treeSaplings"
-  | "lawnMower"
-  | "gardenFurniture"
-  | "gardenGnomes";
-
-export type GarderingSupplies = Commerce<GarderingSuppliesItemNames>;
-
-export const garderingSuppliesItems: GarderingSupplies = {
+export const garderingSuppliesItems = {
   grass: {
     time: "25m30s",
     requires: {

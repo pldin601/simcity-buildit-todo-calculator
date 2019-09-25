@@ -1,19 +1,4 @@
-import { Factory } from "../factories";
-
-export type CommonFactoryProductName =
-  | "textiles"
-  | "metal"
-  | "seeds"
-  | "animalFeed"
-  | "sugarAndSpices"
-  | "wood"
-  | "minerals"
-  | "electronicalComponents"
-  | "glass"
-  | "plastic"
-  | "chemicals";
-
-export const commonFactory: Factory<CommonFactoryProductName> = {
+export const commonFactory = {
   textiles: { time: "3h" },
   metal: { time: "1m" },
   seeds: { time: "20m" },
