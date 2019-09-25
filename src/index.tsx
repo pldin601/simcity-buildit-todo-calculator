@@ -1,8 +1,8 @@
 import * as React from "react";
 import { render } from "react-dom";
-import calculate from "./domain/calculate";
-
 import "./styles.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import calculate from "./domain/calculate";
 import Quest from "./components/quest/Quest";
 
 function App() {
