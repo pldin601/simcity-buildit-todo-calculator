@@ -40,3 +40,5 @@ export const buildingSuppliesItems = {
     }
   }
 };
+
+export type BuildingSuppliesItems = keyof typeof buildingSuppliesItems;

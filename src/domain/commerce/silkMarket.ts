@@ -22,3 +22,5 @@ export const silkMarketItems = {
     }
   }
 };
+
+export type SilkMarketItems = keyof typeof silkMarketItems;

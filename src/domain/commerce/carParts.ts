@@ -22,3 +22,5 @@ export const carPartsItems = {
     }
   }
 };
+
+export type CarPartsItems = keyof typeof carPartsItems;

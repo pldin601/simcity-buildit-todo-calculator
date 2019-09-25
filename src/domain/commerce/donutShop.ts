@@ -45,3 +45,5 @@ export const donutShopItems = {
     }
   }
 };
+
+export type DonutShopItems = keyof typeof donutShopItems;

@@ -38,3 +38,5 @@ export const fastFoodRestaurantItems = {
     }
   }
 };
+
+export type FastFoodRestaurantItems = keyof typeof fastFoodRestaurantItems;

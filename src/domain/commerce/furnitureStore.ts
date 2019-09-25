@@ -39,3 +39,5 @@ export const furnitureStoreItems = {
     }
   }
 };
+
+export type FurnitureStoreItems = keyof typeof furnitureStoreItems;

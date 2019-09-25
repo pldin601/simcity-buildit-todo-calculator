@@ -11,3 +11,5 @@ export const commonFactory = {
   plastic: { time: "9m" },
   chemicals: { time: "2h" }
 };
+
+export type CommonItems = keyof typeof commonFactory;

@@ -1,8 +1,14 @@
 import { findKey, range, min, isEqual, indexOf, orderBy } from "lodash";
 import convertTime from "./convertTime";
 import { createEmptySolution } from "./solution";
-import { factories } from "./factories";
-import { commerces } from "./commerce";
+import { factories, FactoryItems } from "./factories";
+import { CommerceItems, commerces } from "./commerce";
+
+export type Order = Partial<
+  {
+    [K in FactoryItems | CommerceItems]: number;
+  }
+>;
 
 function calculateProduct(product, solutionState) {
   const factoryKey = findKey(factories, it => product in it);
@@ -34,7 +40,7 @@ function calculateProduct(product, solutionState) {
     const commerceState = solutionState.commerce[commerceKey];
     const timeToProduce = convertTime(commerceProduct.time);
     let startAt = commerceState.timeQueue;
-    Object.keys(commerceProduct.requires).forEach((key) => {
+    Object.keys(commerceProduct.requires).forEach(key => {
       const quantity = commerceProduct.requires[key];
       range(0, quantity).forEach(() => {
         startAt = Math.max(startAt, calculateProduct(key, solutionState));
@@ -79,7 +85,7 @@ function groupLog(log) {
   return groupedLog;
 }
 
-export default function calculate(...orders) {
+export default function calculate(...orders: Order[]) {
   const solutionState = createEmptySolution();
   let completeAt = 0;
   orders.forEach(order => {

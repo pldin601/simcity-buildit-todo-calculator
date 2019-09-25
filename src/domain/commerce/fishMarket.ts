@@ -22,3 +22,5 @@ export const fishMarketItems = {
     }
   }
 };
+
+export type FishMarketItems = keyof typeof fishMarketItems;

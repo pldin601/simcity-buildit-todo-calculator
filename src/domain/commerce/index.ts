@@ -1,16 +1,28 @@
-import {buildingSuppliesItems} from "./buildingSupplies";
-import {carPartsItems} from "./carParts";
-import {donutShopItems} from "./donutShop";
-import {farmersMarketItems} from "./farmersMarket";
-import {fashionStoreItems} from "./fashionStore";
-import {fastFoodRestaurantItems} from "./fastFoodRestaurant";
-import {fishMarketItems} from "./fishMarket";
-import {furnitureStoreItems} from "./furnitureStore";
-import {garderingSuppliesItems} from "./garderingSupplies";
-import {hardwareStoreItems} from "./hardwareStore";
-import {homeAppliancesItems} from "./homeAppliances";
-import {silkMarketItems} from "./silkMarket";
-import {tropicalProductsStoreItems} from "./tropicalProductsStore";
+import {
+  BuildingSuppliesItems,
+  buildingSuppliesItems
+} from "./buildingSupplies";
+import { CarPartsItems, carPartsItems } from "./carParts";
+import { DonutShopItems, donutShopItems } from "./donutShop";
+import { FarmersMarketItems, farmersMarketItems } from "./farmersMarket";
+import { FashionStoreItems, fashionStoreItems } from "./fashionStore";
+import {
+  FastFoodRestaurantItems,
+  fastFoodRestaurantItems
+} from "./fastFoodRestaurant";
+import { FishMarketItems, fishMarketItems } from "./fishMarket";
+import { FurnitureStoreItems, furnitureStoreItems } from "./furnitureStore";
+import {
+  GarderingSuppliesItems,
+  garderingSuppliesItems
+} from "./garderingSupplies";
+import { HardwareStoreItems, hardwareStoreItems } from "./hardwareStore";
+import { HomeAppliancesItems, homeAppliancesItems } from "./homeAppliances";
+import { SilkMarketItems, silkMarketItems } from "./silkMarket";
+import {
+  TropicalProductsStoreItems,
+  tropicalProductsStoreItems
+} from "./tropicalProductsStore";
 
 export const commerces = {
   buildingSupplies: buildingSuppliesItems,
@@ -21,9 +33,24 @@ export const commerces = {
   fastFoodRestaurant: fastFoodRestaurantItems,
   fishMarket: fishMarketItems,
   furnitureStore: furnitureStoreItems,
-  garderingSupplies: garderingSuppliesItems,
+  gardeningSupplies: garderingSuppliesItems,
   hardwareStore: hardwareStoreItems,
   homeAppliances: homeAppliancesItems,
   silkMarket: silkMarketItems,
   tropicalProductsStore: tropicalProductsStoreItems
 };
+
+export type CommerceItems =
+  | BuildingSuppliesItems
+  | CarPartsItems
+  | DonutShopItems
+  | FarmersMarketItems
+  | FashionStoreItems
+  | FastFoodRestaurantItems
+  | FishMarketItems
+  | FurnitureStoreItems
+  | GarderingSuppliesItems
+  | HardwareStoreItems
+  | HomeAppliancesItems
+  | SilkMarketItems
+  | TropicalProductsStoreItems;

@@ -45,3 +45,5 @@ export const garderingSuppliesItems = {
     }
   }
 };
+
+export type GarderingSuppliesItems = keyof typeof garderingSuppliesItems;

@@ -39,3 +39,5 @@ export const fashionStoreItems = {
     }
   }
 };
+
+export type FashionStoreItems = keyof typeof fashionStoreItems;

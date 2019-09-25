@@ -21,3 +21,5 @@ export const tropicalProductsStoreItems = {
     }
   }
 };
+
+export type TropicalProductsStoreItems = keyof typeof tropicalProductsStoreItems;

@@ -17,7 +17,7 @@ export function createEmptySolution() {
       fastFoodRestaurant: { timeQueue: 0 },
       fishMarket: { timeQueue: 0 },
       furnitureStore: { timeQueue: 0 },
-      garderingSupplies: { timeQueue: 0 },
+      gardeningSupplies: { timeQueue: 0 },
       hardwareStore: { timeQueue: 0 },
       homeAppliances: { timeQueue: 0 },
       silkMarket: { timeQueue: 0 },

@@ -1,0 +1,14 @@
+.productPicture {
+}
+
+.placeholder {
+  display: inline-block;
+  background: transparent;
+}
+
+.productPicture,
+.placeholder {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}

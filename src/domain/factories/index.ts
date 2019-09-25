@@ -1,13 +1,8 @@
-import {  commonFactory } from "./common";
-import {  coconutFactory } from "./coconut";
-import {
-  oilPlantFactory
-} from "./oilPlant";
-import {  coldFiordFactory } from "./coldFiord";
-import {
-  
-  whiteMountainsFactory
-} from "./whiteMountains";
+import { commonFactory, CommonItems } from "./common";
+import { coconutFactory, CoconutItems } from "./coconut";
+import { oilPlantFactory, OilPlantItems } from "./oilPlant";
+import { coldFiordFactory, ColdFiordItems } from "./coldFiord";
+import { whiteMountainsFactory, WhiteMountainsItems } from "./whiteMountains";
 
 export const factories = {
   common: commonFactory,
@@ -16,3 +11,10 @@ export const factories = {
   oilPlant: oilPlantFactory,
   whiteMountains: whiteMountainsFactory
 };
+
+export type FactoryItems =
+  | CoconutItems
+  | ColdFiordItems
+  | OilPlantItems
+  | WhiteMountainsItems
+  | CommonItems;

@@ -45,3 +45,5 @@ export const farmersMarketItems = {
     }
   }
 };
+
+export type FarmersMarketItems = keyof typeof farmersMarketItems;

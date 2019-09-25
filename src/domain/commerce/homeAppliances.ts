@@ -31,3 +31,5 @@ export const homeAppliancesItems = {
     }
   }
 };
+
+export type HomeAppliancesItems = keyof typeof homeAppliancesItems;

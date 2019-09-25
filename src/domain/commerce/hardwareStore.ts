@@ -45,3 +45,5 @@ export const hardwareStoreItems = {
     }
   }
 };
+
+export type HardwareStoreItems = keyof typeof hardwareStoreItems;
