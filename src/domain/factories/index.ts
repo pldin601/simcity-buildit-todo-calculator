@@ -7,7 +7,7 @@ import { whiteMountainsFactory, WhiteMountainsItems } from "./whiteMountains";
 export const factories = {
   common: commonFactory,
   coconut: coconutFactory,
-  coldFiord: coldFiordFactory,
+  frostyFjords: coldFiordFactory,
   oilPlant: oilPlantFactory,
   whiteMountains: whiteMountainsFactory
 };

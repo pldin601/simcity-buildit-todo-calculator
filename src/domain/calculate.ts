@@ -39,7 +39,7 @@ function calculateProduct(product, solutionState) {
     const commerceProduct = commerce[product];
     const commerceState = solutionState.commerce[commerceKey];
     const timeToProduce = convertTime(commerceProduct.time);
-    let startAt = commerceState.timeQueue;
+    let startAt = 0;
     Object.keys(commerceProduct.requires).forEach(key => {
       const quantity = commerceProduct.requires[key];
       range(0, quantity).forEach(() => {

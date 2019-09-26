@@ -17,6 +17,8 @@ export default function Quest({ log }) {
           <tr>
             <th>#</th>
             <th>Task</th>
+            <th>Time</th>
+            <th>Store</th>
           </tr>
         </thead>
         <tbody>
@@ -32,6 +34,10 @@ export default function Quest({ log }) {
                       <td>
                         <WaitTime time={delta} />
                       </td>
+                      <td>
+                        <HumanTime time={time} />
+                      </td>
+                      <td />
                     </tr>
                   )}
                   <tr>
@@ -43,6 +49,10 @@ export default function Quest({ log }) {
                         <CollectProduct product={product} quantity={quantity} />
                       )}
                     </td>
+                    <td>
+                      <HumanTime time={time} />
+                    </td>
+                    <td>-</td>
                   </tr>
                 </>
               );

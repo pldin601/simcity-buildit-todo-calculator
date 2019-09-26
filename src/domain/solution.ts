@@ -3,10 +3,10 @@ export function createEmptySolution() {
     log: [],
     factories: {
       coconut: { timeQueues: new Array(5).fill(0) },
-      coldFiord: { timeQueues: new Array(5).fill(0) },
+      frostyFjords: { timeQueues: new Array(5).fill(0) },
       oilPlant: { timeQueues: new Array(5).fill(0) },
       whiteMountains: { timeQueues: new Array(5).fill(0) },
-      common: { timeQueues: new Array(40).fill(0) }
+      common: { timeQueues: new Array(44).fill(0) }
     },
     commerce: {
       buildingSupplies: { timeQueue: 0 },
