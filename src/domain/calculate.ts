@@ -10,7 +10,7 @@ export type Order = Partial<
   }
 >;
 
-function calculateProduct(product, solutionState) {
+function calculateProduct(product, solutionState): number {
   const factoryKey = findKey(factories, it => product in it);
   const commerceKey = findKey(commerces, it => product in it);
 
@@ -57,7 +57,7 @@ function calculateProduct(product, solutionState) {
       message: "FINISH",
       product
     });
-    return startAt + 1;
+    return startAt + timeToProduce + 1;
   }
 
   throw new TypeError(`Unknown product - ${product}`);
