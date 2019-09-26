@@ -53,7 +53,7 @@ function calculateProduct(product, solutionState): number {
       product
     });
     solutionState.log.push({
-      time: startAt + timeToProduce,
+      time: commerceState.timeQueue,
       message: "FINISH",
       product
     });

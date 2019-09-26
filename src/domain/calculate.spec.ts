@@ -25,3 +25,10 @@ test("Calculate Nails", () => {
     { time: 301, message: "FINISH", product: "nails", quantity: 1 }
   ]);
 });
+
+
+xtest("Calculate Two Hammers", () => {
+  const log = calculate({ hammer: 2 });
+  expect(log).toEqual([
+  ]);
+});
