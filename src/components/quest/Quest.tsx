@@ -15,24 +15,27 @@ export default function Quest({ log }) {
       <Table size={"sm"}>
         <thead>
           <tr>
+            <th>#</th>
             <th>Task</th>
           </tr>
         </thead>
         <tbody>
           {React.Children.toArray(
-            log.map(({ product, quantity, message, time }) => {
+            log.map(({ product, quantity, message, time }, index) => {
               const delta = time - prevTime;
               prevTime = time;
               return (
                 <>
                   {delta > 0 && (
                     <tr>
+                      <td />
                       <td>
                         <WaitTime time={delta} />
                       </td>
                     </tr>
                   )}
                   <tr>
+                    <td>{index + 1}</td>
                     <td>
                       {message === "START" ? (
                         <ProduceProduct product={product} quantity={quantity} />
