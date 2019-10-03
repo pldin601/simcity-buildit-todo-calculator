@@ -1,4 +1,6 @@
-export const commonFactory = {
+import {AbstractFactory} from "./Factory";
+
+const commonProductsData = {
   textiles: { time: "3h" },
   metal: { time: "1m" },
   seeds: { time: "20m" },
@@ -12,4 +14,8 @@ export const commonFactory = {
   chemicals: { time: "2h" }
 };
 
-export type CommonItems = keyof typeof commonFactory;
+export type CommonFactoryProducts = keyof typeof commonProductsData;
+
+export class CommonFactory extends AbstractFactory<CommonFactoryProducts> {
+  protected productsData = commonProductsData;
+}
