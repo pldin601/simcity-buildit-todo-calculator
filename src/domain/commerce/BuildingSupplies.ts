@@ -1,4 +1,6 @@
-export const buildingSuppliesItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+const buildingSuppliesData = {
   nails: {
     time: "4m",
     requires: {
@@ -41,4 +43,8 @@ export const buildingSuppliesItems = {
   }
 };
 
-export type BuildingSuppliesItems = keyof typeof buildingSuppliesItems;
+export type BuildingSuppliesProducts = keyof typeof buildingSuppliesData;
+
+export class BuildingSupplies extends AbstractCommerce<BuildingSuppliesProducts> {
+  protected productsData = buildingSuppliesData;
+}

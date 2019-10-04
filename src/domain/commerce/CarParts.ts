@@ -1,4 +1,6 @@
-export const carPartsItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+const carPartsData = {
   motorOil: {
     time: "16m",
     requires: {
@@ -23,4 +25,8 @@ export const carPartsItems = {
   }
 };
 
-export type CarPartsItems = keyof typeof carPartsItems;
+export type CarPartsProducts = keyof typeof carPartsData;
+
+export class CarParts extends AbstractCommerce<CarPartsProducts> {
+  protected productsData = carPartsData;
+}

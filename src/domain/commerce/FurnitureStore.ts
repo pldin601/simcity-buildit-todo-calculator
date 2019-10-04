@@ -1,4 +1,6 @@
-export const furnitureStoreItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+const furnitureStoreData = {
   chairs: {
     time: "17m",
     requires: {
@@ -40,4 +42,8 @@ export const furnitureStoreItems = {
   }
 };
 
-export type FurnitureStoreItems = keyof typeof furnitureStoreItems;
+export type FurnitureStoreProducts = keyof typeof furnitureStoreData;
+
+export class FurnitureStore extends AbstractCommerce<FurnitureStoreProducts> {
+  protected productsData = furnitureStoreData;
+}

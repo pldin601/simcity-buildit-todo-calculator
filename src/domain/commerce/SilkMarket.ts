@@ -1,4 +1,6 @@
-export const silkMarketItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+export const silkMarketData = {
   thread: {
     time: "16m",
     requires: {
@@ -23,4 +25,8 @@ export const silkMarketItems = {
   }
 };
 
-export type SilkMarketItems = keyof typeof silkMarketItems;
+export type SilkMarketProducts = keyof typeof silkMarketData;
+
+export class SilkMarket extends AbstractCommerce<SilkMarketProducts> {
+  protected productsData = silkMarketData;
+}

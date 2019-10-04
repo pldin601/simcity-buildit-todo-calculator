@@ -1,4 +1,6 @@
-export const hardwareStoreItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+const hardwareStoreData = {
   hammer: {
     time: "11m12s",
     requires: {
@@ -46,4 +48,8 @@ export const hardwareStoreItems = {
   }
 };
 
-export type HardwareStoreItems = keyof typeof hardwareStoreItems;
+export type HardwareStoreProducts = keyof typeof hardwareStoreData;
+
+export class HardwareStore extends AbstractCommerce<HardwareStoreProducts> {
+  protected productsData = hardwareStoreData;
+}

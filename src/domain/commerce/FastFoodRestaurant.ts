@@ -1,4 +1,6 @@
-export const fastFoodRestaurantItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+const fastFoodRestaurantData = {
   icecreamSandwich: {
     time: "12m36s",
     requires: {
@@ -39,4 +41,10 @@ export const fastFoodRestaurantItems = {
   }
 };
 
-export type FastFoodRestaurantItems = keyof typeof fastFoodRestaurantItems;
+export type FastFoodRestaurantProducts = keyof typeof fastFoodRestaurantData;
+
+export class FastFoodRestaurant extends AbstractCommerce<
+  FastFoodRestaurantProducts
+> {
+  protected productsData = fastFoodRestaurantData;
+}

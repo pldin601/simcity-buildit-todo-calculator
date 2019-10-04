@@ -1,4 +1,4 @@
-import {AbstractFactory} from "./Factory";
+import {AbstractFactory} from "./AbstractFactory";
 
 const whiteMountainsProductsData = {
   silk: { time: "6m" }

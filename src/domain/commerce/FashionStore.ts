@@ -1,4 +1,6 @@
-export const fashionStoreItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+const fashionStoreData = {
   cap: {
     time: "54m",
     requires: {
@@ -40,4 +42,8 @@ export const fashionStoreItems = {
   }
 };
 
-export type FashionStoreItems = keyof typeof fashionStoreItems;
+export type FashionStoreProducts = keyof typeof fashionStoreData;
+
+export class FashionStore extends AbstractCommerce<FashionStoreProducts> {
+  protected productsData = fashionStoreData;
+}

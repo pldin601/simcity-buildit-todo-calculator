@@ -1,4 +1,6 @@
-export const farmersMarketItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+const farmersMarketData = {
   beef: {
     time: "2h7m",
     requires: {
@@ -46,4 +48,8 @@ export const farmersMarketItems = {
   }
 };
 
-export type FarmersMarketItems = keyof typeof farmersMarketItems;
+export type FarmersMarketProducts = keyof typeof farmersMarketData;
+
+export class FarmersMarket extends AbstractCommerce<FarmersMarketProducts> {
+  protected productsData = farmersMarketData;
+}

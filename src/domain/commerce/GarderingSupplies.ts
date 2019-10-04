@@ -1,4 +1,6 @@
-export const garderingSuppliesItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+const gardeningSuppliesData = {
   grass: {
     time: "25m30s",
     requires: {
@@ -46,4 +48,10 @@ export const garderingSuppliesItems = {
   }
 };
 
-export type GarderingSuppliesItems = keyof typeof garderingSuppliesItems;
+export type GardeningSuppliesProducts = keyof typeof gardeningSuppliesData;
+
+export class GardeningSupplies extends AbstractCommerce<
+  GardeningSuppliesProducts
+> {
+  protected productsData = gardeningSuppliesData;
+}

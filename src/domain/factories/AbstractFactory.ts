@@ -1,37 +1,30 @@
 import convertTime from "../convertTime";
-
-export interface FactoryPromise {
-  time: number;
-}
+import {Factory, ProductionPromise} from "../Factory";
 
 export type ProductsData<Product extends string> = {
   [K in Product]: { time: string };
 };
 
-export interface Factory<Product extends string> {
-  order(product: Product, startTime: number): FactoryPromise;
-  canProduce(product: Product): boolean;
-  getQueueTime(): number;
-}
-
-export class AbstractFactory<Product extends string>
+export abstract class AbstractFactory<Product extends string>
   implements Factory<Product> {
-  protected productsData: ProductsData<Product> = {} as ProductsData<Product>;
+  abstract productsData: ProductsData<Product>;
 
   private queueTime: number = 0;
 
-  public order(product: Product, startTime: number): FactoryPromise {
+  public produce(product: Product, startTime: number): ProductionPromise {
     if (!this.canProduce(product)) {
       throw new Error(`This factory doesn't produce ${product}`);
     }
+
     const max = Math.max(startTime, this.queueTime);
     const { time: productionTime } = this.productsData[product];
+
     this.queueTime = max + convertTime(productionTime);
 
     return { time: this.queueTime };
   }
 
-  public canProduce(product: Product): boolean {
+  public canProduce(product: string): product is Product {
     return product in this.productsData;
   }
 

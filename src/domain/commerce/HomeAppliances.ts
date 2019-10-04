@@ -1,4 +1,6 @@
-export const homeAppliancesItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+const homeAppliancesData = {
   bbqGrill: {
     time: "2h45m",
     requires: {
@@ -32,4 +34,8 @@ export const homeAppliancesItems = {
   }
 };
 
-export type HomeAppliancesItems = keyof typeof homeAppliancesItems;
+export type HomeAppliancesProducts = keyof typeof homeAppliancesData;
+
+export class HomeAppliances extends AbstractCommerce<HomeAppliancesProducts> {
+  protected productsData = homeAppliancesData;
+}

@@ -1,18 +1,18 @@
 import {minBy, range} from "lodash";
-import {Factory, FactoryPromise} from "./Factory";
+import {Factory, ProductionPromise} from "./Factory";
 
-export class FactoryUnit<Products extends string> implements Factory<Products> {
-  private readonly factories: Array<Factory<Products>> = [];
+export class FactoryUnit<Product extends string> implements Factory<Product> {
+  private readonly factories: Array<Factory<Product>> = [];
 
-  constructor(amount: number, ctor: { new (): Factory<Products> }) {
+  constructor(amount: number, ctor: { new (): Factory<Product> }) {
     this.factories = range(amount).map(() => new ctor());
   }
 
-  public order(product: Products, startTime: number): FactoryPromise {
-    return this.getMostUnused().order(product, startTime);
+  public produce(product: Product, startTime: number): ProductionPromise {
+    return this.getMostUnused().produce(product, startTime);
   }
 
-  canProduce(product: Products): boolean {
+  public canProduce(product: string): product is Product {
     return this.getMostUnused().canProduce(product);
   }
 

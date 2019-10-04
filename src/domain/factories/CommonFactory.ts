@@ -1,4 +1,4 @@
-import {AbstractFactory} from "./Factory";
+import {AbstractFactory} from "./AbstractFactory";
 
 const commonProductsData = {
   textiles: { time: "3h" },

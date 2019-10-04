@@ -1,4 +1,6 @@
-export const donutShopItems = {
+import {AbstractCommerce} from "./AbstractCommerce";
+
+const donutShopData = {
   donuts: {
     time: "40m30s",
     requires: {
@@ -46,4 +48,8 @@ export const donutShopItems = {
   }
 };
 
-export type DonutShopItems = keyof typeof donutShopItems;
+export type DonutShopProducts = keyof typeof donutShopData;
+
+export class DonutShop extends AbstractCommerce<DonutShopProducts> {
+  protected productsData = donutShopData;
+}
