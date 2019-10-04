@@ -83,21 +83,15 @@ test("Should produce tropical product", () => {
 });
 
 test("Should planner be correctly invoked #1", () => {
-  spyOn(planner, 'startItem');
-  spyOn(planner, 'collectItem');
-  unit.produce('metal', 1);
-  expect(planner.startItem).toHaveBeenCalledWith('metal', 0);
-  expect(planner.collectItem).toHaveBeenCalledWith('metal', 60);
+  spyOn(planner, "collectItem");
+  unit.produce("metal", 1);
+  expect(planner.collectItem).toHaveBeenCalledWith("metal", 60);
 });
 
-test.only("Should planner be correctly invoked #2", () => {
-  spyOn(planner, 'startItem');
-  spyOn(planner, 'collectItem');
-  unit.produce('hammer', 1);
-  expect(planner.startItem).toHaveBeenCalledWith('metal', 0);
-  expect(planner.collectItem).toHaveBeenCalledWith('metal', 60);
-  expect(planner.startItem).toHaveBeenCalledWith('wood', 0);
-  expect(planner.collectItem).toHaveBeenCalledWith('wood', 180);
-  expect(planner.startItem).toHaveBeenCalledWith('hammer', 180);
-  expect(planner.collectItem).toHaveBeenCalledWith('hammer', 852);
+test("Should planner be correctly invoked #2", () => {
+  spyOn(planner, "collectItem");
+  unit.produce("hammer", 1);
+  expect(planner.collectItem).toHaveBeenCalledWith("metal", 60);
+  expect(planner.collectItem).toHaveBeenCalledWith("wood", 180);
+  expect(planner.collectItem).toHaveBeenCalledWith("hammer", 852);
 });

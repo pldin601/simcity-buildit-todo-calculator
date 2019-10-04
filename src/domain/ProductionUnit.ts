@@ -51,8 +51,6 @@ export class ProductionUnit implements Production {
     const solution = find(this.solution, it => it.canProduce(product));
 
     if (solution !== undefined) {
-      this.planner.startItem(product, solution.getQueueTime());
-
       const promise = latestPromise(
         range(quantity).map(() => solution.produce(product, 0))
       );
