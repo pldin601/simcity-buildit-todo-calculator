@@ -5,6 +5,7 @@ export interface PlanItem {
   product: AllProducts;
   time: number;
 }
+
 export interface GroupedPlanItem {
   product: AllProducts;
   quantity: number;

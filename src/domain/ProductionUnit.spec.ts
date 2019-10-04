@@ -95,3 +95,29 @@ test("Should planner be correctly invoked #2", () => {
   expect(planner.collectItem).toHaveBeenCalledWith("wood", 180);
   expect(planner.collectItem).toHaveBeenCalledWith("hammer", 852);
 });
+
+test("Planner should correctly generate production plan", () => {
+  unit.produce("tv", 10);
+  expect(planner.getPlan()).toEqual([
+    {
+      product: "plastic",
+      quantity: 20,
+      time: 1080
+    },
+    {
+      product: "glass",
+      quantity: 20,
+      time: 18540
+    },
+    {
+      product: "electronicalComponents",
+      quantity: 20,
+      time: 25740
+    },
+    {
+      product: "tv",
+      quantity: 10,
+      time: 115200
+    }
+  ]);
+});
