@@ -7,7 +7,7 @@ export type ProductsData<Product extends string> = {
 
 export abstract class AbstractFactory<Product extends string>
   implements Factory<Product> {
-  abstract productsData: ProductsData<Product>;
+  protected abstract productsData: ProductsData<Product>;
 
   private queueTime: number = 0;
 

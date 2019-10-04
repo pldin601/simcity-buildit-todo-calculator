@@ -1,14 +1,11 @@
 import * as React from "react";
-import { Container, Table, Row, Col } from "reactstrap";
+import {Col, Container, Row, Table} from "reactstrap";
 import ProduceProduct from "./ProduceProduct";
-import CollectProduct from "./CollectProduct";
-import WaitTime from "./WaitTime";
 import HumanTime from "../HumanTime";
+import {PlanItem} from "../../domain/Planner";
 
-export default function Quest({ log }) {
-  let prevTime = 0;
-
-  const { time: totalTime } = log[log.length - 1];
+export default function Quest({ items }: { items: PlanItem[] }) {
+  const { time: totalTime } = items[items.length - 1];
 
   return (
     <Container>
@@ -23,31 +20,13 @@ export default function Quest({ log }) {
         </thead>
         <tbody>
           {React.Children.toArray(
-            log.map(({ product, quantity, message, time }, index) => {
-              const delta = time - prevTime;
-              prevTime = time;
+            items.map(({ product, time }, index) => {
               return (
                 <>
-                  {delta > 0 && (
-                    <tr>
-                      <td />
-                      <td>
-                        <WaitTime time={delta} />
-                      </td>
-                      <td>
-                        <HumanTime time={time} />
-                      </td>
-                      <td />
-                    </tr>
-                  )}
                   <tr>
                     <td>{index + 1}</td>
                     <td>
-                      {message === "START" ? (
-                        <ProduceProduct product={product} quantity={quantity} />
-                      ) : (
-                        <CollectProduct product={product} quantity={quantity} />
-                      )}
+                      <ProduceProduct product={product} quantity={1} />
                     </td>
                     <td>
                       <HumanTime time={time} />
