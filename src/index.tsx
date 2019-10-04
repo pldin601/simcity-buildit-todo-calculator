@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {Container, Nav, NavItem, NavLink} from "reactstrap";
 
 function App() {
+  const [tab, setTab] = React.useState<"orders" | "plan">("plan");
   const [orders, dispatch] = useOrderReducer([
     {
       breadRoll: 2,
@@ -24,13 +25,25 @@ function App() {
     <Container>
       <Nav pills={true} fill={true}>
         <NavItem>
-          <NavLink>Orders</NavLink>
+          <NavLink
+            href={"#"}
+            active={tab === "orders"}
+            onClick={() => setTab("orders")}
+          >
+            Orders
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink active={true}>Production Plan</NavLink>
+          <NavLink
+            href={"#"}
+            active={tab === "plan"}
+            onClick={() => setTab("plan")}
+          >
+            Production Plan
+          </NavLink>
         </NavItem>
       </Nav>
-      <Quest items={planItems} />
+      {tab === "plan" && <Quest items={planItems} />}
     </Container>
   );
 }
