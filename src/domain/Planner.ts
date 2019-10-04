@@ -1,5 +1,18 @@
 import {AllProducts} from "./Production";
 
+export interface PlanItem {
+  product: AllProducts;
+  time: number;
+}
+
 export class Planner {
-  collectItem(product: AllProducts, time: number) {}
+  private items: PlanItem[] = [];
+
+  public collectItem(product: AllProducts, time: number) {
+    this.items.push({ product, time });
+  }
+
+  public getPlan() {
+    return this.items;
+  }
 }
