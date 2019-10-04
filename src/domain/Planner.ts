@@ -1,13 +1,13 @@
 import {isEmpty, last, orderBy} from "lodash";
-import {AllProducts} from "./Production";
+import {AnyProduct} from "./Production";
 
 export interface PlanItem {
-  product: AllProducts;
+  product: AnyProduct;
   time: number;
 }
 
 export interface GroupedPlanItem {
-  product: AllProducts;
+  product: AnyProduct;
   quantity: number;
   time: number;
 }
@@ -15,7 +15,7 @@ export interface GroupedPlanItem {
 export class Planner {
   private items: PlanItem[] = [];
 
-  public collectItem(product: AllProducts, time: number) {
+  public collectItem(product: AnyProduct, time: number) {
     this.items.push({ product, time });
   }
 

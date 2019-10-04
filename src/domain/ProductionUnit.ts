@@ -5,7 +5,7 @@ import {CoconutFactory} from "./factories/CoconutFactory";
 import {FrostyFjordsFactory} from "./factories/FrostyFjordsFactory";
 import {OilPlantFactory} from "./factories/OilPlantFactory";
 import {WhiteMountainsFactory} from "./factories/WhiteMountainsFactory";
-import {AllProducts, Production} from "./Production";
+import {AnyProduct, Production} from "./Production";
 import {Factory, latestPromise, ProductionPromise} from "./Factory";
 import {BuildingSupplies} from "./commerce/BuildingSupplies";
 import {CarParts} from "./commerce/CarParts";
@@ -47,7 +47,7 @@ export class ProductionUnit implements Production {
 
   constructor(private planner: Planner) {}
 
-  public produce(product: AllProducts, quantity: number): ProductionPromise {
+  public produce(product: AnyProduct, quantity: number): ProductionPromise {
     const solution = find(this.solution, it => it.canProduce(product));
 
     if (solution !== undefined) {

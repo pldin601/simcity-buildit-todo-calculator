@@ -1,16 +1,38 @@
 import * as React from "react";
 import {render} from "react-dom";
 import Quest from "./components/quest/Quest";
+import {convertOrdersToPlan} from "./domain/order";
+import {useOrderReducer} from "./order-reducer";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {ProductionUnit} from "./domain/ProductionUnit";
-import {Planner} from "./domain/Planner";
+import {Container, Nav, NavItem, NavLink} from "reactstrap";
 
 function App() {
-  const planner = new Planner();
-  const unit = new ProductionUnit(planner);
-  unit.produce("tv", 10);
-  return <Quest items={planner.getPlan()} />;
+  const [orders, dispatch] = useOrderReducer([
+    {
+      breadRoll: 2,
+      bricks: 2,
+      gardenFurniture: 2
+    }
+  ]);
+
+  const planItems = React.useMemo(() => {
+    return convertOrdersToPlan(...orders);
+  }, [orders]);
+
+  return (
+    <Container>
+      <Nav pills={true} fill={true}>
+        <NavItem>
+          <NavLink>Orders</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink active={true}>Production Plan</NavLink>
+        </NavItem>
+      </Nav>
+      <Quest items={planItems} />
+    </Container>
+  );
 }
 
 const rootElement = document.getElementById("root");

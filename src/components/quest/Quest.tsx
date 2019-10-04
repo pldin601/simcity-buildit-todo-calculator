@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Col, Container, Row, Table} from "reactstrap";
+import {Col, Row, Table} from "reactstrap";
 import ProduceProduct from "./ProduceProduct";
 import HumanTime from "../HumanTime";
 import {GroupedPlanItem} from "../../domain/Planner";
@@ -8,7 +8,7 @@ export default function Quest({ items }: { items: GroupedPlanItem[] }) {
   const { time: totalTime } = items[items.length - 1];
 
   return (
-    <Container>
+    <>
       <Table size={"sm"}>
         <thead>
           <tr>
@@ -44,6 +44,6 @@ export default function Quest({ items }: { items: GroupedPlanItem[] }) {
           Approx. Time: <HumanTime time={totalTime} />
         </Col>
       </Row>
-    </Container>
+    </>
   );
 }

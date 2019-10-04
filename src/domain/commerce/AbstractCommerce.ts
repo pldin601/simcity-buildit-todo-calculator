@@ -1,11 +1,11 @@
 import {Commerce} from "../Commerce";
-import {AllProducts, Production} from "../Production";
+import {AnyProduct, Production} from "../Production";
 import {latestPromise, ProductionPromise} from "../Factory";
 import convertTime from "../convertTime";
 
 export type Requires = Partial<
   {
-    [K in AllProducts]: number;
+    [K in AnyProduct]: number;
   }
 >;
 
@@ -34,7 +34,7 @@ export abstract class AbstractCommerce<Product extends string>
     // Produce Requirements
     const promise = latestPromise(
       Object.entries(requires).map(([prod, qty]) =>
-        this.production.produce((prod as any) as AllProducts, qty as number)
+        this.production.produce((prod as any) as AnyProduct, qty as number)
       )
     );
 

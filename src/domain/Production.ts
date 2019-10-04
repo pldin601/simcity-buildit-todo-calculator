@@ -18,7 +18,7 @@ import {HomeAppliancesProducts} from "./commerce/HomeAppliances";
 import {SilkMarketProducts} from "./commerce/SilkMarket";
 import {TropicalProductsStoreProducts} from "./commerce/TropicalProductsStore";
 
-export type AllProducts =
+export type AnyProduct =
   | CommonFactoryProducts
   | CoconutFactoryProducts
   | FrostyFjordsProducts
@@ -39,5 +39,5 @@ export type AllProducts =
   | TropicalProductsStoreProducts;
 
 export interface Production {
-  produce(product: AllProducts, quantity: number): ProductionPromise;
+  produce(product: AnyProduct, quantity: number): ProductionPromise;
 }
