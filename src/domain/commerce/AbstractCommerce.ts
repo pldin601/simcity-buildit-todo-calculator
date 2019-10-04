@@ -39,7 +39,7 @@ export abstract class AbstractCommerce<Product extends string>
     );
 
     // Produce Item
-    const max = Math.max(promise.time, startTime);
+    const max = Math.max(promise.time, this.queueTime, startTime);
     this.queueTime = max + convertTime(time);
 
     return {

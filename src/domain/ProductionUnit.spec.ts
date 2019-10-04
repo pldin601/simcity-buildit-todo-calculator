@@ -35,7 +35,7 @@ test("Should produce building supplies product", () => {
 });
 
 test("Should produce car parts product", () => {
-  expect(unit.produce("carTire", 1)).toEqual({ time: 15840 });
+  expect(unit.produce("carTire", 1)).toEqual({ time: 16560 });
 });
 
 test("Should produce donut shop product", () => {
@@ -51,7 +51,7 @@ test("Should produce fashion store product", () => {
 });
 
 test("Should produce fast food product", () => {
-  expect(unit.produce("pizza", 1)).toEqual({ time: 30516 });
+  expect(unit.produce("pizza", 1)).toEqual({ time: 35856 });
 });
 
 test("Should produce fish market product", () => {
@@ -63,7 +63,7 @@ test("Should produce furniture store product", () => {
 });
 
 test("Should produce gardening product", () => {
-  expect(unit.produce("gardenGnomes", 1)).toEqual({ time: 14640 });
+  expect(unit.produce("gardenGnomes", 1)).toEqual({ time: 19440 });
 });
 
 test("Should produce hardware store product", () => {
@@ -71,7 +71,7 @@ test("Should produce hardware store product", () => {
 });
 
 test("Should produce home appliances product", () => {
-  expect(unit.produce("tv", 1)).toEqual({ time: 34200 });
+  expect(unit.produce("tv", 10)).toEqual({ time: 115200 });
 });
 
 test("Should produce silk market product", () => {
@@ -79,7 +79,7 @@ test("Should produce silk market product", () => {
 });
 
 test("Should produce tropical product", () => {
-  expect(unit.produce("tropicalDrink", 1)).toEqual({ time: 26400 });
+  expect(unit.produce("tropicalDrink", 1)).toEqual({ time: 27660 });
 });
 
 test("Should planner be correctly invoked #1", () => {

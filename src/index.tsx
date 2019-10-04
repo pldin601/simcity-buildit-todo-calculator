@@ -9,7 +9,7 @@ import {Planner} from "./domain/Planner";
 function App() {
   const planner = new Planner();
   const unit = new ProductionUnit(planner);
-  unit.produce("tv", 1);
+  unit.produce("tv", 10);
   return <Quest items={planner.getPlan()} />;
 }
 

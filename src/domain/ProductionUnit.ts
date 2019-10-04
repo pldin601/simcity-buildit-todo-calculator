@@ -24,7 +24,7 @@ import {Planner} from "./Planner";
 
 export class ProductionUnit implements Production {
   private solution: Factory<string>[] = [
-    new ParallelFactory(40, CommonFactory),
+    new ParallelFactory(50, CommonFactory),
     new ParallelFactory(5, CoconutFactory),
     new ParallelFactory(5, FrostyFjordsFactory),
     new ParallelFactory(5, OilPlantFactory),
@@ -44,20 +44,20 @@ export class ProductionUnit implements Production {
     new SilkMarket(this),
     new TropicalProductsStore(this)
   ];
-  
+
   constructor(private planner: Planner) {}
 
   public produce(product: AllProducts, quantity: number): ProductionPromise {
     const solution = find(this.solution, it => it.canProduce(product));
 
     if (solution !== undefined) {
-      const promise = latestPromise(
-        range(quantity).map(() => solution.produce(product, 0))
+      return latestPromise(
+        range(quantity).map(() => {
+          const promise = solution.produce(product, 0);
+          this.planner.collectItem(product, promise.time);
+          return promise;
+        })
       );
-
-      this.planner.collectItem(product, promise.time);
-
-      return promise;
     }
 
     throw new Error(`Production doesn't know how to produce ${product}`);

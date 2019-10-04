@@ -2,9 +2,9 @@ import * as React from "react";
 import {Col, Container, Row, Table} from "reactstrap";
 import ProduceProduct from "./ProduceProduct";
 import HumanTime from "../HumanTime";
-import {PlanItem} from "../../domain/Planner";
+import {GroupedPlanItem} from "../../domain/Planner";
 
-export default function Quest({ items }: { items: PlanItem[] }) {
+export default function Quest({ items }: { items: GroupedPlanItem[] }) {
   const { time: totalTime } = items[items.length - 1];
 
   return (
@@ -20,13 +20,13 @@ export default function Quest({ items }: { items: PlanItem[] }) {
         </thead>
         <tbody>
           {React.Children.toArray(
-            items.map(({ product, time }, index) => {
+            items.map(({ product, quantity, time }, index) => {
               return (
                 <>
                   <tr>
                     <td>{index + 1}</td>
                     <td>
-                      <ProduceProduct product={product} quantity={1} />
+                      <ProduceProduct product={product} quantity={quantity} />
                     </td>
                     <td>
                       <HumanTime time={time} />
