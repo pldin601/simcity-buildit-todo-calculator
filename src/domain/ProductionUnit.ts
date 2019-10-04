@@ -1,5 +1,5 @@
 import {find, range} from "lodash";
-import {FactoryUnit} from "./FactoryUnit";
+import {ParallelFactory} from "./ParallelFactory";
 import {CommonFactory} from "./factories/CommonFactory";
 import {CoconutFactory} from "./factories/CoconutFactory";
 import {FrostyFjordsFactory} from "./factories/FrostyFjordsFactory";
@@ -7,7 +7,6 @@ import {OilPlantFactory} from "./factories/OilPlantFactory";
 import {WhiteMountainsFactory} from "./factories/WhiteMountainsFactory";
 import {AllProducts, Production} from "./Production";
 import {Factory, latestPromise, ProductionPromise} from "./Factory";
-import {Commerce} from "./Commerce";
 import {BuildingSupplies} from "./commerce/BuildingSupplies";
 import {CarParts} from "./commerce/CarParts";
 import {DonutShop} from "./commerce/DonutShop";
@@ -21,17 +20,16 @@ import {HardwareStore} from "./commerce/HardwareStore";
 import {HomeAppliances} from "./commerce/HomeAppliances";
 import {SilkMarket} from "./commerce/SilkMarket";
 import {TropicalProductsStore} from "./commerce/TropicalProductsStore";
+import {Planner} from "./Planner";
 
 export class ProductionUnit implements Production {
-  private factories: Factory<string>[] = [
-    new FactoryUnit(40, CommonFactory),
-    new FactoryUnit(5, CoconutFactory),
-    new FactoryUnit(5, FrostyFjordsFactory),
-    new FactoryUnit(5, OilPlantFactory),
-    new FactoryUnit(5, WhiteMountainsFactory)
-  ];
+  private solution: Factory<string>[] = [
+    new ParallelFactory(40, CommonFactory),
+    new ParallelFactory(5, CoconutFactory),
+    new ParallelFactory(5, FrostyFjordsFactory),
+    new ParallelFactory(5, OilPlantFactory),
+    new ParallelFactory(5, WhiteMountainsFactory),
 
-  private commerce: Commerce<string>[] = [
     new BuildingSupplies(this),
     new CarParts(this),
     new DonutShop(this),
@@ -46,22 +44,22 @@ export class ProductionUnit implements Production {
     new SilkMarket(this),
     new TropicalProductsStore(this)
   ];
+  
+  constructor(private planner: Planner) {}
 
   public produce(product: AllProducts, quantity: number): ProductionPromise {
-    const factory = find(this.factories, it => it.canProduce(product));
+    const solution = find(this.solution, it => it.canProduce(product));
 
-    if (factory !== undefined) {
-      return latestPromise(
-        range(quantity).map(() => factory.produce(product, 0))
+    if (solution !== undefined) {
+      this.planner.startItem(product, solution.getQueueTime());
+
+      const promise = latestPromise(
+        range(quantity).map(() => solution.produce(product, 0))
       );
-    }
 
-    const commerce = find(this.commerce, it => it.canProduce(product));
+      this.planner.collectItem(product, promise.time);
 
-    if (commerce !== undefined) {
-      return latestPromise(
-        range(quantity).map(() => commerce.produce(product, 0))
-      );
+      return promise;
     }
 
     throw new Error(`Production doesn't know how to produce ${product}`);

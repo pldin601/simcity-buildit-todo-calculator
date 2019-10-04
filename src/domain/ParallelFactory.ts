@@ -1,7 +1,7 @@
 import {minBy, range} from "lodash";
 import {Factory, ProductionPromise} from "./Factory";
 
-export class FactoryUnit<Product extends string> implements Factory<Product> {
+export class ParallelFactory<Product extends string> implements Factory<Product> {
   private readonly factories: Array<Factory<Product>> = [];
 
   constructor(amount: number, ctor: { new (): Factory<Product> }) {
