@@ -7,20 +7,44 @@ import {OilPlantFactory} from "./factories/OilPlantFactory";
 import {WhiteMountainsFactory} from "./factories/WhiteMountainsFactory";
 import {AllProducts, Production} from "./Production";
 import {Factory, latestPromise, ProductionPromise} from "./Factory";
+import {Commerce} from "./Commerce";
+import {BuildingSupplies} from "./commerce/BuildingSupplies";
+import {CarParts} from "./commerce/CarParts";
+import {DonutShop} from "./commerce/DonutShop";
+import {FarmersMarket} from "./commerce/FarmersMarket";
+import {FashionStore} from "./commerce/FashionStore";
+import {FastFoodRestaurant} from "./commerce/FastFoodRestaurant";
+import {FishMarket} from "./commerce/FishMarket";
+import {FurnitureStore} from "./commerce/FurnitureStore";
+import {GardeningSupplies} from "./commerce/GarderingSupplies";
+import {HardwareStore} from "./commerce/HardwareStore";
+import {HomeAppliances} from "./commerce/HomeAppliances";
+import {SilkMarket} from "./commerce/SilkMarket";
+import {TropicalProductsStore} from "./commerce/TropicalProductsStore";
 
 export class ProductionUnit implements Production {
-  private commonFactoryUnit = new FactoryUnit(40, CommonFactory);
-  private coconutFactoryUnit = new FactoryUnit(5, CoconutFactory);
-  private frostyFjordsUnit = new FactoryUnit(5, FrostyFjordsFactory);
-  private oilPlantFactoryUnit = new FactoryUnit(5, OilPlantFactory);
-  private whiteMountainsFactoryUnit = new FactoryUnit(5, WhiteMountainsFactory);
-
   private factories: Factory<string>[] = [
-    this.commonFactoryUnit,
-    this.coconutFactoryUnit,
-    this.frostyFjordsUnit,
-    this.oilPlantFactoryUnit,
-    this.whiteMountainsFactoryUnit
+    new FactoryUnit(40, CommonFactory),
+    new FactoryUnit(5, CoconutFactory),
+    new FactoryUnit(5, FrostyFjordsFactory),
+    new FactoryUnit(5, OilPlantFactory),
+    new FactoryUnit(5, WhiteMountainsFactory)
+  ];
+
+  private commerce: Commerce<string>[] = [
+    new BuildingSupplies(this),
+    new CarParts(this),
+    new DonutShop(this),
+    new FarmersMarket(this),
+    new FashionStore(this),
+    new FastFoodRestaurant(this),
+    new FishMarket(this),
+    new FurnitureStore(this),
+    new GardeningSupplies(this),
+    new HardwareStore(this),
+    new HomeAppliances(this),
+    new SilkMarket(this),
+    new TropicalProductsStore(this)
   ];
 
   public produce(product: AllProducts, quantity: number): ProductionPromise {
@@ -32,6 +56,14 @@ export class ProductionUnit implements Production {
       );
     }
 
-    throw new Error();
+    const commerce = find(this.commerce, it => it.canProduce(product));
+
+    if (commerce !== undefined) {
+      return latestPromise(
+        range(quantity).map(() => commerce.produce(product, 0))
+      );
+    }
+
+    throw new Error(`Production doesn't know how to produce ${product}`);
   }
 }
