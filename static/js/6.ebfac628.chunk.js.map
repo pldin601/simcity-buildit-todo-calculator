@@ -1,0 +1,1 @@
+{"version":3,"sources":["images/beef.png"],"names":["module","exports"],"mappings":"0GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/6.ebfac628.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/beef.fdae968c.png\";"],"sourceRoot":""}

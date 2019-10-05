@@ -1,0 +1,1 @@
+{"version":3,"sources":["images/animalfeed.png"],"names":["module","exports"],"mappings":"0GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/3.4265d1d2.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/animalfeed.3003c30e.png\";"],"sourceRoot":""}

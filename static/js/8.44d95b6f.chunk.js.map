@@ -1,0 +1,1 @@
+{"version":3,"sources":["images/bricks.png"],"names":["module","exports"],"mappings":"0GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/8.44d95b6f.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/bricks.17c77a38.png\";"],"sourceRoot":""}

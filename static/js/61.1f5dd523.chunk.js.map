@@ -1,0 +1,1 @@
+{"version":3,"sources":["images/treesaplings.png"],"names":["module","exports"],"mappings":"2GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/61.1f5dd523.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/treesaplings.6dcc3e7f.png\";"],"sourceRoot":""}

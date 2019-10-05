@@ -1,0 +1,1 @@
+{"version":3,"sources":["images/burgers.png"],"names":["module","exports"],"mappings":"0GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/9.68c73a1f.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/burgers.625fd643.png\";"],"sourceRoot":""}

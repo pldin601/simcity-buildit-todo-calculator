@@ -1,0 +1,1 @@
+{"version":3,"sources":["images/couch.png"],"names":["module","exports"],"mappings":"2GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/21.87149dc5.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/couch.776bbc27.png\";"],"sourceRoot":""}

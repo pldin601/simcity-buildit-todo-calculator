@@ -1,0 +1,2 @@
+(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[4],{37:function(o,i,p){o.exports=p.p+"static/media/backpack.383e2b0d.png"}}]);
+//# sourceMappingURL=4.da03ddec.chunk.js.map
