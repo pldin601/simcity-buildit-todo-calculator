@@ -28,7 +28,7 @@ function App() {
           <Orders orders={orders} dispatch={dispatch} />
         </Col>
         <Col>
-          <ProductionPlan items={planItems} />
+          {orders.length > 0 ? <ProductionPlan items={planItems} /> : 'Nothing to show.'}
         </Col>
       </Row>
     </Container>

@@ -21,6 +21,12 @@ export type OrderReducerAction =
       type: "REMOVE_FROM_ORDER";
       index: number;
       item: AnyProduct;
+    }
+  | {
+      type: "INCREMENT_QUANTITY";
+      index: number;
+      item: AnyProduct;
+      amount: number;
     };
 
 function reduceOrders(
@@ -47,6 +53,17 @@ function reduceOrders(
         if (index === action.index) {
           const { [action.item]: _, ...restItems } = order;
           return restItems;
+        }
+        return order;
+      });
+
+    case "INCREMENT_QUANTITY":
+      return state.map((order, index) => {
+        if (index === action.index) {
+          return {
+            ...order,
+            [action.item]: (order[action.item] || 0) + action.amount
+          };
         }
         return order;
       });
