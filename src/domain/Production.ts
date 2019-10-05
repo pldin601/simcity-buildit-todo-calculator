@@ -39,5 +39,5 @@ export type AnyProduct =
   | TropicalProductsStoreProducts;
 
 export interface Production {
-  produce(product: AnyProduct, quantity: number): ProductionPromise;
+  produce(product: AnyProduct, quantity: number, startTime: number): ProductionPromise;
 }

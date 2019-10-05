@@ -20,40 +20,46 @@ import {HardwareStore} from "./commerce/HardwareStore";
 import {HomeAppliances} from "./commerce/HomeAppliances";
 import {SilkMarket} from "./commerce/SilkMarket";
 import {TropicalProductsStore} from "./commerce/TropicalProductsStore";
-import {Planner} from "./Planner";
+import {ProductionPlanner} from "./ProductionPlanner";
 
 export class ProductionUnit implements Production {
-  private solution: Factory<string>[] = [
-    new ParallelFactory(50, CommonFactory),
-    new ParallelFactory(5, CoconutFactory),
-    new ParallelFactory(5, FrostyFjordsFactory),
-    new ParallelFactory(5, OilPlantFactory),
-    new ParallelFactory(5, WhiteMountainsFactory),
+  private readonly solution: Factory<string>[];
 
-    new BuildingSupplies(this),
-    new CarParts(this),
-    new DonutShop(this),
-    new FarmersMarket(this),
-    new FashionStore(this),
-    new FastFoodRestaurant(this),
-    new FishMarket(this),
-    new FurnitureStore(this),
-    new GardeningSupplies(this),
-    new HardwareStore(this),
-    new HomeAppliances(this),
-    new SilkMarket(this),
-    new TropicalProductsStore(this)
-  ];
+  constructor(private planner: ProductionPlanner) {
+    this.solution = [
+      new ParallelFactory(50, CommonFactory),
+      new ParallelFactory(5, CoconutFactory),
+      new ParallelFactory(5, FrostyFjordsFactory),
+      new ParallelFactory(5, OilPlantFactory),
+      new ParallelFactory(5, WhiteMountainsFactory),
 
-  constructor(private planner: Planner) {}
+      new BuildingSupplies(this),
+      new CarParts(this),
+      new DonutShop(this),
+      new FarmersMarket(this),
+      new FashionStore(this),
+      new FastFoodRestaurant(this),
+      new FishMarket(this),
+      new FurnitureStore(this),
+      new GardeningSupplies(this),
+      new HardwareStore(this),
+      new HomeAppliances(this),
+      new SilkMarket(this),
+      new TropicalProductsStore(this)
+    ];
+  }
 
-  public produce(product: AnyProduct, quantity: number): ProductionPromise {
+  public produce(
+    product: AnyProduct,
+    quantity: number,
+    startTime: number
+  ): ProductionPromise {
     const solution = find(this.solution, it => it.canProduce(product));
 
     if (solution !== undefined) {
       return latestPromise(
         range(quantity).map(() => {
-          const promise = solution.produce(product, 0);
+          const promise = solution.produce(product, startTime);
           this.planner.collectItem(product, promise.time);
           return promise;
         })

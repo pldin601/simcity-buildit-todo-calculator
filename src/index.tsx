@@ -1,14 +1,13 @@
 import * as React from "react";
 import {render} from "react-dom";
-import Quest from "./components/quest/Quest";
+import {Container} from "reactstrap";
+import ProductionPlan from "./components/quest/ProductionPlan";
 import {convertOrdersToPlan} from "./domain/order";
-import {useOrderReducer} from "./order-reducer";
+import {useOrderReducer} from "./orderReducer";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Container, Nav, NavItem, NavLink} from "reactstrap";
 
 function App() {
-  const [tab, setTab] = React.useState<"orders" | "plan">("plan");
   const [orders, dispatch] = useOrderReducer([
     {
       breadRoll: 2,
@@ -23,27 +22,7 @@ function App() {
 
   return (
     <Container>
-      <Nav pills={true} fill={true}>
-        <NavItem>
-          <NavLink
-            href={"#"}
-            active={tab === "orders"}
-            onClick={() => setTab("orders")}
-          >
-            Orders
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink
-            href={"#"}
-            active={tab === "plan"}
-            onClick={() => setTab("plan")}
-          >
-            Production Plan
-          </NavLink>
-        </NavItem>
-      </Nav>
-      {tab === "plan" && <Quest items={planItems} />}
+      <ProductionPlan items={planItems} />
     </Container>
   );
 }

@@ -2,9 +2,9 @@ import * as React from "react";
 import {Col, Row, Table} from "reactstrap";
 import ProduceProduct from "./ProduceProduct";
 import HumanTime from "../HumanTime";
-import {GroupedPlanItem} from "../../domain/Planner";
+import {GroupedPlanItem} from "../../domain/ProductionPlanner";
 
-export default function Quest({ items }: { items: GroupedPlanItem[] }) {
+export default function ProductionPlan({ items }: { items: GroupedPlanItem[] }) {
   const { time: totalTime } = items[items.length - 1];
 
   return (

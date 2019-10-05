@@ -34,7 +34,11 @@ export abstract class AbstractCommerce<Product extends string>
     // Produce Requirements
     const promise = latestPromise(
       Object.entries(requires).map(([prod, qty]) =>
-        this.production.produce((prod as any) as AnyProduct, qty as number)
+        this.production.produce(
+          (prod as any) as AnyProduct,
+          qty as number,
+          startTime
+        )
       )
     );
 
@@ -47,11 +51,11 @@ export abstract class AbstractCommerce<Product extends string>
     };
   }
 
-  canProduce(product: string): product is Product {
+  public canProduce(product: string): product is Product {
     return product in this.productsData;
   }
 
-  getQueueTime(): number {
+  public getQueueTime(): number {
     return this.queueTime;
   }
 }
