@@ -62,7 +62,7 @@ function orderReducer(
         if (index === action.index) {
           return {
             ...order,
-            [action.product]: (order[action.product] || 0) + action.amount
+            [action.product]: Math.max(0, (order[action.product] || 0) + action.amount)
           };
         }
         return order;

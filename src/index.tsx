@@ -1,21 +1,20 @@
 import * as React from "react";
-import {render} from "react-dom";
-import {Col, Container, Row} from "reactstrap";
+import { render } from "react-dom";
+import { Col, Container, Row } from "reactstrap";
 import ProductionPlan from "./components/quest/ProductionPlan";
-import {convertOrdersToPlan} from "./domain/order";
-import {useOrderReducer} from "./use/orderReducer";
+import { Orders } from "./components/Orders";
+import { convertOrdersToPlan } from "./domain/order";
+import { useOrderReducer } from "./use/orderReducer";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Orders} from "./components/Orders";
 
 function App() {
-  const [orders, dispatch] = useOrderReducer([
-    {
-      breadRoll: 2,
-      bricks: 2,
-      gardenFurniture: 2
-    }
-  ]);
+  const lastOrders = JSON.parse(localStorage.getItem("lastOrders") || "[]");
+  const [orders, dispatch] = useOrderReducer(lastOrders);
+
+  React.useEffect(() => {
+    localStorage.setItem("lastOrders", JSON.stringify(orders));
+  }, [orders]);
 
   const planItems = React.useMemo(() => {
     return convertOrdersToPlan.apply(null, orders);
@@ -28,7 +27,7 @@ function App() {
           <Orders orders={orders} dispatch={dispatch} />
         </Col>
         <Col>
-          {orders.length > 0 ? (
+          {planItems.length > 0 ? (
             <ProductionPlan items={planItems} />
           ) : (
             "Nothing to show."
