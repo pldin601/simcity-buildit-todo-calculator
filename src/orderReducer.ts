@@ -51,8 +51,8 @@ function reduceOrders(
     case "REMOVE_FROM_ORDER":
       return state.map((order, index) => {
         if (index === action.index) {
-          const { [action.item]: _, ...restItems } = order;
-          return restItems;
+          const { [action.item]: _, ...otherItems } = order;
+          return otherItems;
         }
         return order;
       });
