@@ -4,6 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.tsx",
+  "homepage": "https://pldin601.github.io/simcity-buildit-todo-calculator",
   "dependencies": {
     "@types/lodash": "4.14.139",
     "bootstrap": "^4.3.1",
@@ -19,6 +20,7 @@
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.2",
     "@types/reactstrap": "^8.0.4",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
     "typescript": "3.3.3"
   },
@@ -26,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     ">0.2%",
