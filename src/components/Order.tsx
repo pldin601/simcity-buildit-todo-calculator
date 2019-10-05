@@ -1,9 +1,9 @@
 import * as React from "react";
-import {Dispatch} from "react";
-import {Button, Col, Table} from "reactstrap";
+import { Dispatch } from "react";
+import { Button, Col, Table } from "reactstrap";
 import ProductPicture from "./ProductPicture";
-import {OrderReducerAction} from "../use/orderReducer";
-import {Order as ProductionOrder} from "../domain/order";
+import { OrderReducerAction } from "../use/orderReducer";
+import { Order as ProductionOrder } from "../domain/order";
 
 export interface OrderProps {
   order: ProductionOrder;
