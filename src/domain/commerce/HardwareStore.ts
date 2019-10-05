@@ -48,6 +48,8 @@ const hardwareStoreData = {
   }
 };
 
+export const products = Object.keys(hardwareStoreData);
+
 export type HardwareStoreProducts = keyof typeof hardwareStoreData;
 
 export class HardwareStore extends AbstractCommerce<HardwareStoreProducts> {

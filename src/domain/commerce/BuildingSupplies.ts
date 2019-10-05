@@ -43,6 +43,8 @@ const buildingSuppliesData = {
   }
 };
 
+export const products = Object.keys(buildingSuppliesData);
+
 export type BuildingSuppliesProducts = keyof typeof buildingSuppliesData;
 
 export class BuildingSupplies extends AbstractCommerce<BuildingSuppliesProducts> {

@@ -48,6 +48,8 @@ const donutShopData = {
   }
 };
 
+export const products = Object.keys(donutShopData);
+
 export type DonutShopProducts = keyof typeof donutShopData;
 
 export class DonutShop extends AbstractCommerce<DonutShopProducts> {

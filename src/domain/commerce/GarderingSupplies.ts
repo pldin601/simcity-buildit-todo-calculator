@@ -48,6 +48,8 @@ const gardeningSuppliesData = {
   }
 };
 
+export const products = Object.keys(gardeningSuppliesData);
+
 export type GardeningSuppliesProducts = keyof typeof gardeningSuppliesData;
 
 export class GardeningSupplies extends AbstractCommerce<

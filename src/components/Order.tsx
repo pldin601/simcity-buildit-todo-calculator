@@ -4,6 +4,7 @@ import { Button, Col, Table } from "reactstrap";
 import ProductPicture from "./ProductPicture";
 import { OrderReducerAction } from "../use/orderReducer";
 import { Order as ProductionOrder } from "../domain/order";
+import { ProductsSelector } from "./ProductsSelector";
 
 export interface OrderProps {
   order: ProductionOrder;
@@ -38,7 +39,7 @@ export const Order: React.FC<OrderProps> = ({ order, index, dispatch }) => {
   );
 
   return (
-    <Col>
+    <>
       <Table size={"sm"}>
         <thead>
           <tr>
@@ -75,7 +76,8 @@ export const Order: React.FC<OrderProps> = ({ order, index, dispatch }) => {
           )}
         </tbody>
       </Table>
+      <ProductsSelector order={order} index={index} dispatch={dispatch} />
       <Button onClick={handleDeleteOrderClick}>Delete Order</Button>
-    </Col>
+    </>
   );
 };

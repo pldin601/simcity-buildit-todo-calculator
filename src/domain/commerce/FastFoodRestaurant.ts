@@ -41,6 +41,8 @@ const fastFoodRestaurantData = {
   }
 };
 
+export const products = Object.keys(fastFoodRestaurantData);
+
 export type FastFoodRestaurantProducts = keyof typeof fastFoodRestaurantData;
 
 export class FastFoodRestaurant extends AbstractCommerce<

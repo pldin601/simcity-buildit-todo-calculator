@@ -14,6 +14,8 @@ const commonProductsData = {
   chemicals: { time: "2h" }
 };
 
+export const products = Object.keys(commonProductsData);
+
 export type CommonFactoryProducts = keyof typeof commonProductsData;
 
 export class CommonFactory extends AbstractFactory<CommonFactoryProducts> {

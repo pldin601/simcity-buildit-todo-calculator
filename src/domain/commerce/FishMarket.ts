@@ -25,6 +25,8 @@ const fishMarketData = {
   }
 };
 
+export const products = Object.keys(fishMarketData);
+
 export type FishMarketProducts = keyof typeof fishMarketData;
 
 export class FishMarket extends AbstractCommerce<FishMarketProducts> {

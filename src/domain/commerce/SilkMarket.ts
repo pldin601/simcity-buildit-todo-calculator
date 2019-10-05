@@ -1,4 +1,4 @@
-import {AbstractCommerce} from "./AbstractCommerce";
+import { AbstractCommerce } from "./AbstractCommerce";
 
 export const silkMarketData = {
   thread: {
@@ -24,6 +24,8 @@ export const silkMarketData = {
     }
   }
 };
+
+export const products = Object.keys(silkMarketData);
 
 export type SilkMarketProducts = keyof typeof silkMarketData;
 

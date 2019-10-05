@@ -42,6 +42,8 @@ const fashionStoreData = {
   }
 };
 
+export const products = Object.keys(fashionStoreData);
+
 export type FashionStoreProducts = keyof typeof fashionStoreData;
 
 export class FashionStore extends AbstractCommerce<FashionStoreProducts> {

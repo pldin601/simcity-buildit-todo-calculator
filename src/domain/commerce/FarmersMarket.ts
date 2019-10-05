@@ -48,6 +48,8 @@ const farmersMarketData = {
   }
 };
 
+export const products = Object.keys(farmersMarketData);
+
 export type FarmersMarketProducts = keyof typeof farmersMarketData;
 
 export class FarmersMarket extends AbstractCommerce<FarmersMarketProducts> {

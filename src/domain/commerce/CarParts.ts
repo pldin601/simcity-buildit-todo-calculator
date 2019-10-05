@@ -25,6 +25,8 @@ const carPartsData = {
   }
 };
 
+export const products = Object.keys(carPartsData);
+
 export type CarPartsProducts = keyof typeof carPartsData;
 
 export class CarParts extends AbstractCommerce<CarPartsProducts> {

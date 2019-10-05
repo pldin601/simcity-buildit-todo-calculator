@@ -1,4 +1,4 @@
-import {AbstractCommerce} from "./AbstractCommerce";
+import { AbstractCommerce } from "./AbstractCommerce";
 
 const tropicalProductsStoreData = {
   coconutOil: {
@@ -23,6 +23,8 @@ const tropicalProductsStoreData = {
     }
   }
 };
+
+export const products = Object.keys(tropicalProductsStoreData);
 
 export type TropicalProductsStoreProducts = keyof typeof tropicalProductsStoreData;
 

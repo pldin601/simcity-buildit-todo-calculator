@@ -5,8 +5,9 @@ export default function ProductPicture({ product }) {
   const [image, setImage] = React.useState(null);
 
   React.useEffect(() => {
-    import(`../images/${product.toLowerCase()}.png`).then(({ default: src }) =>
-      setImage(src)
+    import(`../images/${product.toLowerCase()}.png`).then(
+      ({ default: src }) => setImage(src),
+      () => {}
     );
   }, [product]);
 

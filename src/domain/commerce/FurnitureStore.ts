@@ -42,6 +42,8 @@ const furnitureStoreData = {
   }
 };
 
+export const products = Object.keys(furnitureStoreData);
+
 export type FurnitureStoreProducts = keyof typeof furnitureStoreData;
 
 export class FurnitureStore extends AbstractCommerce<FurnitureStoreProducts> {

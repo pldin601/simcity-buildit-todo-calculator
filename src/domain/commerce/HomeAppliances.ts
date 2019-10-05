@@ -34,6 +34,8 @@ const homeAppliancesData = {
   }
 };
 
+export const products = Object.keys(homeAppliancesData);
+
 export type HomeAppliancesProducts = keyof typeof homeAppliancesData;
 
 export class HomeAppliances extends AbstractCommerce<HomeAppliancesProducts> {
