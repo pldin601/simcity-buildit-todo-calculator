@@ -1,4 +1,5 @@
 import * as React from "react";
+import { toUpper, first } from "lodash";
 import style from "./ProductPicture.module.css";
 
 export default function ProductPicture({ product }) {
@@ -11,13 +12,15 @@ export default function ProductPicture({ product }) {
     );
   }, [product]);
 
+  const firstBigLetter = toUpper(first(product));
+
   return (
-    <>
+    <span title={product}>
       {image !== null ? (
         <img className={style.productPicture} src={image} alt={product} />
       ) : (
-        <div className={style.placeholder} />
+        <div className={style.placeholder}>{firstBigLetter}</div>
       )}
-    </>
+    </span>
   );
 }

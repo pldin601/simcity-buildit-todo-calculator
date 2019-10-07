@@ -3,7 +3,10 @@
 
 .placeholder {
   display: inline-block;
-  background: transparent;
+  background-color: #062c33;
+  color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .productPicture,
