@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.tsx",
-  "homepage": "https://pldin601.github.io/simcity-buildit-todo-calculator",
+  "homepage": "https://pldin601.github.io/buildit-planner",
   "dependencies": {
     "@types/lodash": "4.14.139",
     "bootstrap": "^4.3.1",
