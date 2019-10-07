@@ -1,0 +1,2 @@
+(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[22],{55:function(o,i,n){o.exports=n.p+"static/media/corn.b89fe929.png"}}]);
+//# sourceMappingURL=22.71dbb048.chunk.js.map

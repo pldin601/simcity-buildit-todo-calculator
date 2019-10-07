@@ -1,1 +1,0 @@
-{"version":3,"sources":["images/corn.png"],"names":["module","exports"],"mappings":"2GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/20.bc294335.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/corn.b89fe929.png\";"],"sourceRoot":""}

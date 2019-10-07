@@ -1,0 +1,2 @@
+(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[53],{86:function(o,i,d){o.exports=d.p+"static/media/microwaveoven.df46f4cd.png"}}]);
+//# sourceMappingURL=53.79eb4d72.chunk.js.map

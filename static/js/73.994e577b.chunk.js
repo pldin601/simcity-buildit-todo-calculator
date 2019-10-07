@@ -1,0 +1,2 @@
+(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[73],{106:function(o,i,t){o.exports=t.p+"static/media/vegetables.71cdf00a.png"}}]);
+//# sourceMappingURL=73.994e577b.chunk.js.map

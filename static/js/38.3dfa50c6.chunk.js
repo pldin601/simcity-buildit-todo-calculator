@@ -1,0 +1,2 @@
+(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[38],{71:function(i,o,d){i.exports=d.p+"static/media/gardenfurniture.65e38d15.png"}}]);
+//# sourceMappingURL=38.3dfa50c6.chunk.js.map

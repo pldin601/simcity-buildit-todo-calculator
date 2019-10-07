@@ -1,0 +1,1 @@
+{"version":3,"sources":["images/donuts.png"],"names":["module","exports"],"mappings":"2GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/27.af237a27.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/donuts.b5d7a625.png\";"],"sourceRoot":""}

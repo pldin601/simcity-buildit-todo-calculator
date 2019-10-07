@@ -1,0 +1,1 @@
+{"version":3,"sources":["images/fish.png"],"names":["module","exports"],"mappings":"2GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/32.96c3925d.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/fish.6374c2b5.png\";"],"sourceRoot":""}

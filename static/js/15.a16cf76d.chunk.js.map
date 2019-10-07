@@ -1,1 +1,0 @@
-{"version":3,"sources":["images/cheesefries.png"],"names":["module","exports"],"mappings":"2GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/15.a16cf76d.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/cheesefries.a379df9c.png\";"],"sourceRoot":""}

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/buildit-planner/precache-manifest.5d1ac1b2b0568dd2b0a93af179007cb6.js"
+  "/buildit-planner/precache-manifest.7c65372f7f321fb0f114875830e5e6b7.js"
 );
 
 self.addEventListener('message', (event) => {

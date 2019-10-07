@@ -1,0 +1,2 @@
+(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[21],{54:function(o,i,n){o.exports=n.p+"static/media/cookingutensils.13e7491f.png"}}]);
+//# sourceMappingURL=21.e1c04d30.chunk.js.map

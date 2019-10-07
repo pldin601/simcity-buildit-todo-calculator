@@ -1,2 +1,0 @@
-(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[41],{74:function(o,i,n){o.exports=n.p+"static/media/lawnmower.8bbc353c.png"}}]);
-//# sourceMappingURL=41.90a84051.chunk.js.map

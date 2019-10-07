@@ -1,2 +1,0 @@
-(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[49],{82:function(i,o,p){i.exports=p.p+"static/media/paint.f2f88e8f.png"}}]);
-//# sourceMappingURL=49.bbba1bef.chunk.js.map

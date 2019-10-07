@@ -1,2 +1,0 @@
-(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[54],{87:function(o,i,t){o.exports=t.p+"static/media/refrigerator.a26f4416.png"}}]);
-//# sourceMappingURL=54.827316c1.chunk.js.map

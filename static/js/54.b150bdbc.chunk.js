@@ -1,0 +1,2 @@
+(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[54],{87:function(i,o,d){i.exports=d.p+"static/media/minerals.84a3d325.png"}}]);
+//# sourceMappingURL=54.b150bdbc.chunk.js.map

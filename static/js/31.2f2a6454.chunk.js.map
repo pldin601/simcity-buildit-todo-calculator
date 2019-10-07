@@ -1,1 +1,0 @@
-{"version":3,"sources":["images/gardenfurniture.png"],"names":["module","exports"],"mappings":"2GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/31.2f2a6454.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/gardenfurniture.65e38d15.png\";"],"sourceRoot":""}

@@ -1,2 +1,0 @@
-(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[29],{62:function(o,i,t){o.exports=t.p+"static/media/frozenyogurt.fafd9f43.png"}}]);
-//# sourceMappingURL=29.ef749dcb.chunk.js.map

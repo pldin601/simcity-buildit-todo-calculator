@@ -1,1 +1,0 @@
-{"version":3,"sources":["images/nails.png"],"names":["module","exports"],"mappings":"2GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/48.c9f43002.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/nails.77fcd1d1.png\";"],"sourceRoot":""}

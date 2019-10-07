@@ -1,0 +1,2 @@
+(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[23],{56:function(o,i,p){o.exports=p.p+"static/media/couch.776bbc27.png"}}]);
+//# sourceMappingURL=23.488b05e8.chunk.js.map

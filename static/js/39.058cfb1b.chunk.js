@@ -1,2 +1,0 @@
-(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[39],{72:function(i,o,d){i.exports=d.p+"static/media/icecreamsandwich.b578db69.png"}}]);
-//# sourceMappingURL=39.058cfb1b.chunk.js.map

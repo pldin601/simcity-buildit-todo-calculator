@@ -1,0 +1,1 @@
+{"version":3,"sources":["images/chairs.png"],"names":["module","exports"],"mappings":"2GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/14.eb46d588.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/chairs.9924658d.png\";"],"sourceRoot":""}

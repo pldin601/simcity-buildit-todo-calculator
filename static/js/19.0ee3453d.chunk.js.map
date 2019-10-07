@@ -1,0 +1,1 @@
+{"version":3,"sources":["images/coconut.png"],"names":["module","exports"],"mappings":"2GAAAA,EAAOC,QAAU,IAA0B","file":"static/js/19.0ee3453d.chunk.js","sourcesContent":["module.exports = __webpack_public_path__ + \"static/media/coconut.95d4f1a0.png\";"],"sourceRoot":""}

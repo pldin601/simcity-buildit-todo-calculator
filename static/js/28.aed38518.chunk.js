@@ -1,2 +1,0 @@
-(window["webpackJsonpbuildit-todo"]=window["webpackJsonpbuildit-todo"]||[]).push([[28],{61:function(o,i,p){o.exports=p.p+"static/media/flourbag.fb5a1273.png"}}]);
-//# sourceMappingURL=28.aed38518.chunk.js.map
